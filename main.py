@@ -55,7 +55,7 @@ KV = r"""
                 text_color: app.theme_cls.primary_color
                 halign: "center"
         MDLabel:
-            text: "MediCalc"
+            text: "MedCalc Hub"
             halign: "center"
             font_style: "H3"
             theme_text_color: "Primary"
@@ -125,7 +125,7 @@ KV = r"""
     MDBoxLayout:
         orientation: "vertical"
         MDToolbar:
-            title: "MediCalc"
+            title: "MedCalc Hub"
             elevation: 8
         ScrollView:
             MDBoxLayout:
@@ -355,6 +355,7 @@ KV = r"""
                     input_filter: "float"
                     mode: "rectangle"
                 MDRaisedButton:
+                    id: type_btn
                     text: root.selected_type
                     on_release: root.open_type_menu(self)
             MDRaisedButton:
@@ -535,7 +536,7 @@ class GetStartedScreen(MDScreen):
 class DisclaimerScreen(MDScreen):
     def on_pre_enter(self):
         self.ids.disclaimer_text.text = (
-            "This application (MediCalc) is an educational tool and NOT a substitute "
+            "This application (MedCalc Hub) is an educational tool and NOT a substitute "
             "for professional medical advice, diagnosis, or treatment.\n\n"
             "Always seek the advice of a qualified healthcare provider with any questions "
             "you may have regarding a medical condition.\n\n"
@@ -604,7 +605,7 @@ class SugarScreen(MDScreen):
         menu.open()
     def set_type(self, t):
         self.selected_type = t
-        self.ids.sugar_list.parent.parent.parent.children[0].children[1].children[0].children[1].text = t
+        self.ids.type_btn.text = t
     def save_reading(self):
         try:
             g = float(self.ids.glucose_field.text)
@@ -684,8 +685,9 @@ class CalorieScreen(MDScreen):
         except:
             Snackbar(text="Invalid numbers").show()
 
-class MediCalcApp(MDApp):
+class MedCalcHubApp(MDApp):
     def build(self):
+        self.title = "MedCalc Hub"
         self.theme_cls.primary_palette = "Teal"
         self.theme_cls.theme_style = "Light"
         self.first_run = not os.path.exists(os.path.join(self.user_data_dir, "seen.txt"))
@@ -741,4 +743,4 @@ class MediCalcApp(MDApp):
                     self.save_json("meds.json", self.medications)
 
 if __name__ == "__main__":
-    MediCalcApp().run()
+    MedCalcHubApp().run()
