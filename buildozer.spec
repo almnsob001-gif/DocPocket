@@ -1,22 +1,16 @@
 [app]
 title = MediCalc
 package.name = medcalc
-package.domain = com.medcalc
+package.domain = org.medcalc
 source.dir = .
-source.include_exts = py,png,jpg,kv,atlas,json
+source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
-requirements = python3,kivy==2.1.0,kivymd==1.1.1,plyer,pillow
+requirements = python3,kivy==2.1.0,kivymd==1.1.1,plyer
 orientation = portrait
 fullscreen = 0
-android.permissions = POST_NOTIFICATIONS,VIBRATE
 android.api = 30
 android.minapi = 21
-android.ndk = 23b
 android.accept_sdk_license = True
-android.archs = arm64-v8a, armeabi-v7a
-android.allow_backup = True
-android.enable_androidx = True
-android.private_storage = True
 
 [buildozer]
 log_level = 2
