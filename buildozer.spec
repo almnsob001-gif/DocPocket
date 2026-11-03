@@ -12,7 +12,6 @@ android.permissions = POST_NOTIFICATIONS,VIBRATE
 android.api = 30
 android.minapi = 21
 android.ndk = 23b
-android.build_tools = 30.0.3
 android.accept_sdk_license = True
 android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
