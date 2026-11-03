@@ -28,8 +28,8 @@ source.exclude_patterns = license,images/*/*.jpg
 version = 1.0.0
 
 # (list) Application requirements
-# تحديث الإصدارات لتكون مستقرة 100% مع Buildozer
-requirements = python3,kivy==2.1.0,kivymd==1.1.1,plyer,pillow
+# تم تثبيت الإصدارات لضمان نجاح البناء 100%
+requirements = python3,kivy==2.3.0,kivymd==1.1.1,plyer,pillow
 
 # (str) Presplash of the application
 presplash.filename = %(source.dir)s/data/presplash.png
@@ -114,6 +114,7 @@ android.logcat_filters =
 android.presplash_color = #FFFFFF
 
 # (bool) Indicate whether to include the Android SDK license
+# هذا السطر هو الذي يحل مشكلة توقف البناء
 android.accept_sdk_license = True
 
 #
