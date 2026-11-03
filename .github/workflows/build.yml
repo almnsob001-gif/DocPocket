@@ -36,6 +36,8 @@ jobs:
 
       - name: Build APK
         run: |
+          # هذا السطر يمسح متغيرات أندرويد الخاصة بالخادم ليجبر Buildozer على تحميل نسخته الخاصة
+          unset ANDROID_HOME ANDROID_NDK_HOME ANDROID_NDK ANDROID_SDK_ROOT
           yes | buildozer -v android debug
 
       - name: Upload APK
