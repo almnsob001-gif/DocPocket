@@ -5,7 +5,7 @@ package.domain = org.medcalchub
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,json
 version = 1.0.0
-requirements = python3,kivy==2.3.0,kivymd==1.1.1,plyer
+requirements = python3,kivy==2.1.0,kivymd==1.1.1,plyer,pillow
 orientation = portrait
 fullscreen = 0
 android.permissions = POST_NOTIFICATIONS,VIBRATE
